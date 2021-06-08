@@ -4,4 +4,5 @@ COPY ./bytehoops /bin/bytehoops
 
 RUN chmod +x /bin/bytehoops
 
-ENTRYPOINT /bin/bytehoops
+ENTRYPOINT ["/bin/bytehoops"]
+
