@@ -12,8 +12,7 @@ build:
 
 docker:
 	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build
-	docker build -t tuxiedev/bytehoops .
-
+	docker build -t ghcr.io/tuxiedev/bytehoops .
 test:
 	docker-compose -f test-services.yml up -d
 	go test ./...
@@ -21,3 +20,5 @@ test:
 clean:
 	docker-compose -f test-services.yml down
 	go clean
+docker-push:
+	docker push ghcr.io/tuxiedev/bytehoops
